@@ -1,0 +1,659 @@
+@charset "UTF-8";
+@import url("/css/main.css");
+
+/* Aquí definimos las Custom properties */
+:root {
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: Lora, serif;
+  --tipo-secundaria: Raleway, sans-serif;
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+/* Opcional */
+/* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* Opcional */
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+    animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  -o-object-fit: cover;
+  object-fit: cover;
+  /* opcional */
+  -o-object-position: center center;
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+} */
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--negro);
+  /* opcional */
+  line-height: 1.4em;
+  /* opcional */
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap");
+:root {
+  --black: #191a19;
+  --dark-green: #006423;
+  --white-green: #4e9f3d;
+  --cream: #d8e9a8;
+  --white: #ffffff;
+  --yellow: #f3e37c;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  /* font-family: "Lora", serif; */
+  /* font-family: "Ubuntu", sans-serif; */
+}
+/* SCROLL */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0f0f0e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #223d27;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #246531;
+}
+
+/* SCROLL FIN*/
+
+[data-content] {
+  display: none;
+}
+
+.active[data-content] {
+  display: block;
+}
+
+/* header */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+  gap: 7em;
+  transition: 0.5s ease-in-out;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+}
+.header.header__idle {
+  background-color: transparent;
+}
+.header.header__navegando {
+  background-color: var(--dark-green);
+  position: static;
+}
+.header__item {
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.3em;
+  margin-bottom: 0;
+
+  font-family: "Ubuntu", sans-serif;
+}
+.header__item:after {
+  display: block;
+  position: relative;
+  top: 10%;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgb(240, 226, 30);
+  transition: 0.5s;
+}
+.header__item:hover:after {
+  width: 100%;
+}
+.header__item.header__item-active:after {
+  display: block;
+  position: relative;
+  top: 10%;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: rgb(240, 226, 30);
+  transition: 0.5s;
+}
+.dropdown {
+  display: none;
+}
+.header__item-dropdown {
+  display: none;
+}
+@media (max-width: 980px) {
+  .header {
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    padding: 0;
+    padding-right: 1em;
+  }
+  .full {
+    display: none;
+  }
+  .dropdown {
+    display: block;
+    color: var(--white);
+  }
+  .dropdown:hover {
+    color: var(--white);
+  }
+  .header__item-dropdown {
+    display: block;
+    height: 3.5em;
+    width: 148px;
+    transition: 0.5s;
+  }
+  .header__item-dropdown.btn-activo {
+    background-color: var(--dark-green);
+    border-radius: 10px 10px 0px 0px;
+  }
+  .header_dropdown-title {
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.3em;
+    margin-bottom: 0;
+    padding: 0px 0px 0px 10px;
+  }
+  .header__dropdown {
+    transition: 0.5s;
+    transform: translateX(40em);
+    margin: 0;
+    padding: 0;
+
+    z-index: 1;
+    background: var(--dark-green);
+    width: 148px;
+
+    position: absolute;
+    border-radius: 0px 0px 10px 10px;
+
+    top: 55px;
+
+    display: none;
+  }
+
+  .header__dropdown p {
+    padding: 1em;
+  }
+  .header__dropdown.activado {
+    display: block;
+    right: 1em;
+    transform: translateX(0em);
+  }
+}
+
+.sliderImg__wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.sliderImg__ul {
+  display: flex;
+  animation: switch 20s infinite alternate linear;
+  width: 400%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.sliderImg__li {
+  width: 100%;
+  list-style: none;
+}
+.sliderImg__img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(30%);
+}
+
+@keyframes switch {
+  0% {
+    margin-left: 0;
+  }
+  20% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: -300%;
+  }
+}
+@media (max-height: 500px) {
+  .header__dropdown p {
+    padding: 0.5em;
+  }
+}
+h1 {
+  color: black;
+}
+.inicioText__span {
+  font-weight: 700 !important;
+  color: var(--white);
+}
+.welcome__container {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.welcome__img {
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+  background-image: url("./tecnicaturas/ipp/bobibot.jpeg");
+  height: 80vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.welcome__text-h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3em;
+  font-weight: 700 !important;
+  color: var(--white);
+}
+.welcome__text-p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300 !important;
+  color: var(--white);
+}
+.svg-separator {
+  background-color: var(--yellow);
+}
+.main__container {
+  background-color: var(--yellow);
+}
+.proyecto__title-h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.7em;
+  font-weight: 700 !important;
+  color: #000;
+}
+.proyecto__title-p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2em;
+  font-weight: 500 !important;
+  color: rgb(42, 42, 42);
+  margin-bottom: 0;
+}
+.proyecto__slider {
+  max-width: 1000px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.proyecto__slider-container {
+  width: 100%;
+  max-width: 80vw;
+  height: 100%;
+  max-height: 600px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proyecto__slider-cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: var(--yellow);
+  border: none;
+}
+
+.proyecto__slider-cards img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+#item-2:checked ~ .proyecto__slider-cards #selector-1,
+#item-1:checked ~ .proyecto__slider-cards #selector-3,
+#item-3:checked ~ .proyecto__slider-cards #selector-2 {
+  transform: translateX(-40%) scale(0.8);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+#item-3:checked ~ .proyecto__slider-cards #selector-1,
+#item-1:checked ~ .proyecto__slider-cards #selector-2,
+#item-2:checked ~ .proyecto__slider-cards #selector-3 {
+  transform: translateX(40%) scale(0.8);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+#item-1:checked ~ .proyecto__slider-cards #selector-1,
+#item-2:checked ~ .proyecto__slider-cards #selector-2,
+#item-3:checked ~ .proyecto__slider-cards #selector-3 {
+  transform: translateX(0) scale(1);
+  z-index: 1;
+}
+
+.container {
+  width: 1200px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.image__wrapper {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%;
+}
+.swiper-wrapper,
+.swiper-slide,
+.image__wrapper {
+  border-radius: 10px;
+}
+.image__wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 10px;
+}
+
+.swiper-button-next {
+  background: rgb(0, 0, 0, 0.5);
+  padding: 2em;
+  border-radius: 5px 0 0 5px;
+  color: white;
+  right: 0;
+}
+.swiper-button-prev {
+  background: rgb(0, 0, 0, 0.5);
+  padding: 2em;
+  border-radius: 0 5px 5px 0;
+  color: white;
+  left: 0;
+}
+
+.container__padlet {
+  height: 700px;
+}
+.container__padlet iframe {
+  width: 100% !important;
+  height: 100%;
+}
+.container.canvas {
+  height: 100%;
+}
+@media (max-width: 1574px) {
+  .proyecto__slider {
+    width: 900px;
+  }
+  #item-2:checked ~ .proyecto__slider-cards #selector-1,
+  #item-1:checked ~ .proyecto__slider-cards #selector-3,
+  #item-3:checked ~ .proyecto__slider-cards #selector-2 {
+    transform: translateX(-20%) scale(0.8);
+  }
+
+  #item-3:checked ~ .proyecto__slider-cards #selector-1,
+  #item-1:checked ~ .proyecto__slider-cards #selector-2,
+  #item-2:checked ~ .proyecto__slider-cards #selector-3 {
+    transform: translateX(20%) scale(0.8);
+  }
+
+  #item-1:checked ~ .proyecto__slider-cards #selector-1,
+  #item-2:checked ~ .proyecto__slider-cards #selector-2,
+  #item-3:checked ~ .proyecto__slider-cards #selector-3 {
+    transform: translateX(0) scale(1);
+  }
+}
+@media (max-width: 906px) {
+  .proyecto__slider {
+    width: 700px;
+  }
+}
+
+@media (max-width: 808px) {
+  .welcome__container {
+    height: 100%;
+  }
+  #item-2:checked ~ .proyecto__slider-cards #selector-1,
+  #item-1:checked ~ .proyecto__slider-cards #selector-3,
+  #item-3:checked ~ .proyecto__slider-cards #selector-2 {
+    transform: translateX(-15%) scale(0.8);
+  }
+
+  #item-3:checked ~ .proyecto__slider-cards #selector-1,
+  #item-1:checked ~ .proyecto__slider-cards #selector-2,
+  #item-2:checked ~ .proyecto__slider-cards #selector-3 {
+    transform: translateX(15%) scale(0.8);
+  }
+  #item-1:checked ~ .proyecto__slider-cards #selector-1,
+  #item-2:checked ~ .proyecto__slider-cards #selector-2,
+  #item-3:checked ~ .proyecto__slider-cards #selector-3 {
+    object-fit: contain;
+    width: 500px;
+    transform: translateX(0) scale(1);
+  }
+}
+@media (max-width: 580px) {
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 501px) {
+  .container {
+    width: 100%;
+  }
+}

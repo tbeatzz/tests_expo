@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Pagina de la expo tecnica del eico 2022"
+    />
+
+    <meta
+      name="keywords"
+      content="EICO, EXPO2022, Expo tecnica, eico expo tecnica 2022"
+    />
+    <meta name="author" content="Alumnos EICO 6to IPP 2022" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio | Eico expo tecnica 2022</title>
+    <!-- Meta tags end -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- ICONS -->
+    <link rel="shortcut icon" href="./img/logos/icon.png" />
+    <script src="https://kit.fontawesome.com/78e29a3f0a.js"></script>
+  </head>
+  <body class="body">
+    <div id="main-container">
+      <!-- Inicio de la pagina -->
+      <div id="main__wrapper">
+        <!-- INICIO buttons and sidebar -->
+        <div id="btn__sidebar__wrapper" class="position-absolute w-100">
+          <!-- INICIO SIDEBAR -->
+          <div id="sidebar__container">
+            <div
+              class="img__sidebar d-flex justify-content-center align-items-center"
+            >
+              <img
+                class="img-fluid"
+                src="./img/logos/logo__M.png"
+                width="250px"
+                alt=""
+              />
+            </div>
+            <ul class="sidebar-nav mt-4 mb-4 p-4">
+              <li class="text-center"><a href="./index.html">Inicio</a></li>
+              <li class="text-center"><a href="">Galeria</a></li>
+              <li class="text-center">
+                <a target="_blank" href="http://escuela.eico.edu.ar/web/"
+                  >Pagina principal</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- FIN SIDEBAR -->
+
+          <!-- INICIO BTN -->
+          <div class="btn__container p-4">
+            <button class="nav__btn__hamburger">
+              <div class="bar"></div>
+            </button>
+          </div>
+          <!-- FIN BTN -->
+
+          <!-- LOGO BRAND-->
+          <div id="brand__logo">
+            <!-- img -->
+            <div id="brand__img">
+              <img class="img-fluid" src="./img/logos/logo__2.png" alt="" />
+            </div>
+            <!-- text -->
+          </div>
+          <!-- END LOGO BRAND -->
+        </div>
+        <!-- FIN buttons and sidebar -->
+
+        <!--INICIO CONTAINER WRAPPER-->
+        <div id="page-content-wrapper">
+          <div id="overlay"></div>
+
+          <div class="bg__parallax bg__img-1 bg__normal">
+            <div id="text__intro">
+              <div
+                id="text"
+                class="d-flex flex-column justify-content-center align-items-center"
+              >
+                <span id="text1"></span>
+                <span id="text2"></span>
+              </div>
+
+              <div id="btn__arrow">
+                <a
+                  href="#3"
+                  class="text-decoration-none d-flex flex-column align-items-center"
+                >
+                  <p style="font-size: 1.5em" class="text-black">
+                    Ver los proyectos
+                  </p>
+                  <i class="mt-2 fa-solid fa-angles-down"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div id="2" class="bg__parallax bg__img-2 bg__normal">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="blur displayed"
+            ></div>
+            <div
+              data-aos="fade-right"
+              data-aos-easing="linear"
+              data-aos-duration="1000"
+              class="slider__container"
+            >
+              <div class="slider__wrapper d-flex col-10 p-4 m-4">
+                <div class="slider__text">
+                  <div class="s__title">
+                    <h1 class="text-center">Sobre la expo</h1>
+                  </div>
+                  <div class="s__content">
+                    <p style="text-align: justify">
+                      La Exposición Técnica se realiza con el objetivo de
+                      demostrar las tecnologías de las distintas tecnicaturas y
+                      mostrarle a las personas nuestro aprendizaje de
+                      conocimientos teóricos y práctica. La Exposición Técnica
+                      se realizará el 15 de Noviembre para el Dia de la
+                      Educación Técnica .
+                    </p>
+                  </div>
+                </div>
+                <div class="slider__video w-100 d-flex justify-content-center">
+                  <video
+                    controls
+                    class="video__spot"
+                    style="border-radius: 20px"
+                    src="./video/Waffle falling over.mp4"
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg__parallax bg__img-3 bg__normal" id="3">
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              class="overlay__tec displayed"
+            ></div>
+            <div class="cards__container">
+              <div class="cards__wrapper" style="margin-bottom: 4em">
+                <a class="cards__a left-a" href="">
+                  <div
+                    class="card__tec left"
+                    data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div class="img_tec">
+                      <img
+                        width="200px"
+                        class="img-fluid"
+                        src="./img/logos/logo__M.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="text_tec text-center">
+                      <h2>Ciclo basico</h2>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="./pages/proyectos/tecnicaturas/eie/index.html"
+                  class="cards__a right-a"
+                >
+                  <div
+                    class="card__tec right"
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div class="img_tec">
+                      <img
+                        width="200px"
+                        class="img-fluid"
+                        src="./img/logos/logoeie.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="text_tec text-center">
+                      <h2>Equipos e instalaciones electromecanicas</h2>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="./pages/proyectos/tecnicaturas/ip/index.html"
+                  class="cards__a left-a"
+                >
+                  <div
+                    class="card__tec left"
+                    data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div class="img_tec">
+                      <img
+                        width="200px"
+                        class="img-fluid"
+                        src="./img/logos/logoip.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="text_tec text-center">
+                      <h2>Industria en procesos</h2>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="./pages/proyectos/tecnicaturas/ipp/index.html"
+                  class="cards__a right-a"
+                >
+                  <div
+                    class="card__tec right"
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div class="img_tec">
+                      <img
+                        width="200px"
+                        class="img-fluid"
+                        src="./img/logos/logoipp.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="text_tec text-center">
+                      <h2>Informatica Profesional y Personal</h2>
+                    </div>
+                  </div>
+                </a>
+
+                <a
+                  href="./pages/proyectos/tecnicaturas/mmo/index.html"
+                  class="cards__a left-a"
+                >
+                  <div
+                    class="card__tec left"
+                    data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                  >
+                    <div class="img_tec">
+                      <img
+                        width="200px"
+                        class="img-fluid"
+                        src="./img/logos/logommo.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="text_tec text-center">
+                      <h2>Maestro Mayor de Obras</h2>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIN CONTAINER WRAPPER -->
+      </div>
+      <!-- fin de la pagina -->
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./scripts/main.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

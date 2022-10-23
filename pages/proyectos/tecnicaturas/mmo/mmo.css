@@ -1,0 +1,206 @@
+.inicioText__container {
+  height: 100vh;
+  bottom: 0;
+}
+.inicioText__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.inicioText__h1 {
+  overflow: hidden;
+  position: relative;
+  margin: 4em;
+}
+.inicioText__span {
+  font-family: "Kanit", sans-serif;
+
+  letter-spacing: 5px;
+  font-size: 4em;
+  font-weight: 400;
+}
+.inicioText__mensaje {
+  display: flex;
+  background-color: rgb(240, 226, 30, 0.5);
+  color: #000;
+  white-space: nowrap;
+  font-weight: 900;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0.2em;
+  transition: 1s;
+  animation: openclose 5s ease infinite;
+}
+
+.word1,
+.word2,
+.word3 {
+  width: 403px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 4em;
+  font-weight: 900;
+  font-family: tahoma;
+}
+
+@keyframes openclose {
+  0% {
+    width: 0;
+  }
+  15% {
+    width: 1209px;
+    transform: translateX(0);
+  }
+
+  25% {
+    width: 1209px;
+    transform: translateX(0);
+  }
+
+  50% {
+    width: 1209px;
+    transform: translateX(-403px);
+  }
+
+  75% {
+    width: 1209px;
+    transform: translateX(-806px);
+  }
+
+  100% {
+    width: 0;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 539px) {
+  .inicioText__h1 {
+    margin: 0;
+  }
+}
+@media (max-width: 405px) {
+  .inicioText__span {
+    font-size: 3em;
+  }
+  .word1,
+  .word2 {
+    width: 340px;
+    font-size: 3em;
+  }
+  .word3 {
+    width: 400px;
+    font-size: 3em;
+  }
+  @keyframes openclose {
+    0% {
+      width: 0;
+    }
+    15% {
+      width: 1080px;
+      transform: translateX(0);
+    }
+
+    25% {
+      width: 1080px;
+      transform: translateX(0);
+    }
+
+    50% {
+      width: 1080px;
+      transform: translateX(-340px);
+    }
+
+    75% {
+      width: 1080px;
+      transform: translateX(-720px);
+    }
+    100% {
+      width: 0;
+      transform: translateX(0);
+    }
+  }
+}
+@media (max-width: 325px) {
+  .inicioText__span {
+    font-size: 2.5em;
+  }
+  .word1,
+  .word2,
+  .word3 {
+    width: 270px;
+    font-size: 2.5em;
+  }
+  @keyframes openclose {
+    0% {
+      width: 0;
+    }
+    15% {
+      width: 1209px;
+      transform: translateX(0);
+    }
+
+    25% {
+      width: 1209px;
+      transform: translateX(0);
+    }
+
+    50% {
+      width: 1209px;
+      transform: translateX(-260px);
+    }
+
+    75% {
+      width: 1209px;
+      transform: translateX(-540px);
+    }
+    100% {
+      width: 0;
+      transform: translateX(0);
+    }
+  }
+}
+@media (max-height: 500px) {
+  .inicioText__h1 {
+    margin: 0;
+  }
+
+  .inicioText__span {
+    font-size: 3em;
+  }
+  .word1,
+  .word2,
+  .word3 {
+    width: 310px;
+    font-size: 3em;
+  }
+  @keyframes openclose {
+    0% {
+      width: 0;
+    }
+    15% {
+      width: 1209px;
+      transform: translateX(0);
+    }
+
+    25% {
+      width: 1209px;
+      transform: translateX(0);
+    }
+
+    50% {
+      width: 1209px;
+      transform: translateX(-303px);
+    }
+
+    75% {
+      width: 1209px;
+      transform: translateX(-615px);
+    }
+    100% {
+      width: 0;
+      transform: translateX(0);
+    }
+  }
+}
